@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/NavigationDrawer.dart';
 import 'package:flutter/src/painting/text_style.dart';
+import 'package:schoolapp/widget/AppBar.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -8,17 +9,9 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
       appBar: AppBar(
-        title: Text('Settings'), centerTitle: true, backgroundColor: Colors.blue,
+        title: Text('Settings'), centerTitle: true, backgroundColor: Colors.black,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            notifications,
-            colour,
-          ]
-        )
-      )
+      bottomNavigationBar: AppBarWidget()
     );
   }
 }
@@ -46,7 +39,7 @@ var colour = Container(
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      const Text('asshole'),
+      const Text('poop'),
     ],
   )
 );

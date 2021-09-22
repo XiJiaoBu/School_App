@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/AppBar.dart';
 
 class ClubsPage extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class ClubsPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Clubs'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
         ),
+        bottomNavigationBar: AppBarWidget()
       );
 }

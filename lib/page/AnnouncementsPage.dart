@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/AppBar.dart';
 
 class AnnouncementsPage extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class AnnouncementsPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Announcements'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
         ),
+        bottomNavigationBar: AppBarWidget()
       );
 }

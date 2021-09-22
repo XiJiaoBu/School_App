@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/main.dart';
-import 'package:helloworld/page/AnnouncementsPage.dart';
-import 'package:helloworld/page/ClubsPage.dart';
-import 'package:helloworld/page/ContactPage.dart';
-import 'package:helloworld/page/SettingsPage.dart';
-import 'package:helloworld/page/SchoolPage.dart';
+import 'package:schoolapp/main.dart';
+import 'package:schoolapp/page/AnnouncementsPage.dart';
+import 'package:schoolapp/page/ClubsPage.dart';
+import 'package:schoolapp/page/ContactPage.dart';
+import 'package:schoolapp/page/SettingsPage.dart';
+import 'package:schoolapp/page/SchoolPage.dart';
+
 
 class NavigationDrawerWidget extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
@@ -30,7 +31,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 buildMenuItem(
-                  text: 'SAC',
+                  text: 'Clubs',
                   icon: Icons.people,
                   onclicked: () => selecteditem(context, 2),
                 ),

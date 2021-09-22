@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/AppBar.dart';
 
 class ContactPage extends StatelessWidget {
   @override
@@ -8,7 +9,8 @@ class ContactPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Contact'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.black,
         ),
+        bottomNavigationBar: AppBarWidget()
       );
 }

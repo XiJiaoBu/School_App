@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:helloworld/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/NavigationDrawer.dart';
+import 'package:schoolapp/widget/AppBar.dart';
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,16 +35,19 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         drawer: NavigationDrawerWidget(),
-        // endDrawer: NavigationDrawerWidget(),
         appBar: AppBar(
           title: Text(MyApp.title),
           centerTitle: true,
+          backgroundColor: Colors.black,
         ),
-        body: Builder(
-          builder: (context) => Container(
-            alignment: Alignment.center,
-            padding: EdgeInsets.symmetric(horizontal: 32),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const <Widget>[
+            Text('i eat fat shit'),
+            Text('i am gay'),
+          ],
           ),
-        ),
-      );
+        bottomNavigationBar: AppBarWidget()
+       );
 }
