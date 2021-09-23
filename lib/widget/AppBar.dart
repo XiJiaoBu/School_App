@@ -14,41 +14,59 @@ class AppBarWidget extends StatefulWidget {
 
 class _AppBarWidgetState extends State<AppBarWidget> {
   int _selectedIndex = 0;
-  static List<Widget> _widgetOptions = <Widget>[
-  MainPage(),
-  AnnouncementsPage(),
-  ClubsPage(),
-  SchoolPage(),
-  SettingsPage(),
-];
+  PageController _pageController = PageController();
+  List<Widget> _screens = [
+    MainPage(),
+    AnnouncementsPage(),
+    ClubsPage(),
+    SchoolPage(),
+    SettingsPage(),
+  ];
+  void _onPageChanged(int index){
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
-void _onItemTapped(int index) {
-  setState(() {
-    _selectedIndex = index;
-  });
-}
+  void _onItemTapped(int selectedindex) {
+    _pageController.jumpToPage(_selectedIndex);
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items:  <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home),
-        label: 'home',
+    return Scaffold(
+      body: PageView(
+        controller: _pageController,
+        children: _screens,
+        onPageChanged: _onPageChanged,
+        physics: NeverScrollableScrollPhysics(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+      iconSize: 25,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        label: 'Home',
         backgroundColor: Colors.black
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.speaker_notes),
+        BottomNavigationBarItem(
+        icon: Icon(Icons.speaker_notes),
         label: 'Inbox',
         backgroundColor: Colors.black
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.people),
+        BottomNavigationBarItem(
+        icon: Icon(Icons.people),
         label: 'Clubs',
         backgroundColor: Colors.black
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.school),
+        BottomNavigationBarItem(
+        icon: Icon(Icons.school),
         label: 'School',
         backgroundColor: Colors.black
         ),
-        BottomNavigationBarItem(icon: Icon(Icons.settings),
+        BottomNavigationBarItem(
+        icon: Icon(Icons.settings),
         label: 'Settings',
         backgroundColor: Colors.black
         ),
@@ -56,6 +74,11 @@ void _onItemTapped(int index) {
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.blue,
       onTap: _onItemTapped,
+      unselectedIconTheme: IconThemeData(
+      color: Colors.white
+      ),
+      showUnselectedLabels: false,
+      )
     );
   }
 }
