@@ -6,7 +6,7 @@ import 'package:schoolapp/page/SettingsPage.dart';
 import 'package:schoolapp/page/SchoolPage.dart';
 
 class AppBarWidget extends StatefulWidget {
-  const AppBarWidget({ Key? key }) : super(key: key);
+  const AppBarWidget({Key? key}) : super(key: key);
 
   @override
   _AppBarWidgetState createState() => _AppBarWidgetState();
@@ -22,64 +22,58 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     SchoolPage(),
     SettingsPage(),
   ];
-  void _onPageChanged(int index){
+
+  void _onPageChanged(int index) {
     setState(() {
       _selectedIndex = index;
+      print("selected index");
     });
   }
 
   void _onItemTapped(int selectedindex) {
     _pageController.jumpToPage(_selectedIndex);
+    print("item tapped");
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        children: _screens,
-        onPageChanged: _onPageChanged,
-        physics: NeverScrollableScrollPhysics(),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-      iconSize: 25,
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        label: 'Home',
-        backgroundColor: Colors.black
+        body: PageView(
+          controller: _pageController,
+          children: _screens,
+          onPageChanged: _onPageChanged,
+          physics: NeverScrollableScrollPhysics(),
         ),
-        BottomNavigationBarItem(
-        icon: Icon(Icons.speaker_notes),
-        label: 'Inbox',
-        backgroundColor: Colors.black
-        ),
-        BottomNavigationBarItem(
-        icon: Icon(Icons.people),
-        label: 'Clubs',
-        backgroundColor: Colors.black
-        ),
-        BottomNavigationBarItem(
-        icon: Icon(Icons.school),
-        label: 'School',
-        backgroundColor: Colors.black
-        ),
-        BottomNavigationBarItem(
-        icon: Icon(Icons.settings),
-        label: 'Settings',
-        backgroundColor: Colors.black
-        ),
-      ],
-      currentIndex: _selectedIndex,
-      selectedItemColor: Colors.blue,
-      onTap: _onItemTapped,
-      unselectedIconTheme: IconThemeData(
-      color: Colors.white
-      ),
-      showUnselectedLabels: false,
-      )
-    );
+        bottomNavigationBar: BottomNavigationBar(
+          iconSize: 25,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+                backgroundColor: Colors.black),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.speaker_notes),
+                label: 'Inbox',
+                backgroundColor: Colors.black),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.people),
+                label: 'Clubs',
+                backgroundColor: Colors.black),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.school),
+                label: 'School',
+                backgroundColor: Colors.black),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.settings),
+                label: 'Settings',
+                backgroundColor: Colors.black),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.blue,
+          onTap: _onItemTapped,
+          unselectedIconTheme: IconThemeData(color: Colors.white),
+          showUnselectedLabels: false,
+        ));
   }
 }
 
