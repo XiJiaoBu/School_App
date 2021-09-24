@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'), centerTitle: true, backgroundColor: Colors.black,
       ),
-      bottomNavigationBar: AppBarWidget()
+      bottomNavigationBar: Nav()
     );
   }
 }

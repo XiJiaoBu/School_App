@@ -10,7 +10,6 @@ class SchoolPage extends StatelessWidget {
           title: Text('School Resources'),
           centerTitle: true,
           backgroundColor: Colors.black,
-        ),
-        bottomNavigationBar: AppBarWidget()
+        ), 
       );
 }

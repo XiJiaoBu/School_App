@@ -5,78 +5,122 @@ import 'package:schoolapp/page/ClubsPage.dart';
 import 'package:schoolapp/page/SettingsPage.dart';
 import 'package:schoolapp/page/SchoolPage.dart';
 
-class AppBarWidget extends StatefulWidget {
-  const AppBarWidget({Key? key}) : super(key: key);
-
+class Nav extends StatefulWidget {
   @override
-  _AppBarWidgetState createState() => _AppBarWidgetState();
+  _NavState createState() => _NavState();
 }
 
-class _AppBarWidgetState extends State<AppBarWidget> {
+class _NavState extends State<Nav> {
   int _selectedIndex = 0;
-  PageController _pageController = PageController();
-  List<Widget> _screens = [
+  List<Widget> _widgetOptions = <Widget> [
     MainPage(),
-    AnnouncementsPage(),
-    ClubsPage(),
-    SchoolPage(),
-    SettingsPage(),
+    Text('ass'),
   ];
 
-  void _onPageChanged(int index) {
+  void _onItemTap(int index) {
     setState(() {
       _selectedIndex = index;
-      print("selected index");
     });
   }
-
-  void _onItemTapped(int selectedindex) {
-    _pageController.jumpToPage(_selectedIndex);
-    print("item tapped");
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: PageView(
-          controller: _pageController,
-          children: _screens,
-          onPageChanged: _onPageChanged,
-          physics: NeverScrollableScrollPhysics(),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          iconSize: 25,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.speaker_notes),
-                label: 'Inbox',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.people),
-                label: 'Clubs',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.school),
-                label: 'School',
-                backgroundColor: Colors.black),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'Settings',
-                backgroundColor: Colors.black),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.blue,
-          onTap: _onItemTapped,
-          unselectedIconTheme: IconThemeData(color: Colors.white),
-          showUnselectedLabels: false,
-        ));
+      appBar: AppBar(
+        title: Text('Bottom Nav Bar'),
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTap,
+      ),
+    );
   }
 }
 
+// class AppBarWidget extends StatefulWidget {
+//   @override
+//   _AppBarWidgetState createState() => _AppBarWidgetState();
+// }
+
+// class _AppBarWidgetState extends State<AppBarWidget> {
+//   int _selectedIndex = 0;
+//   List<Widget> _screens = <Widget>[
+//     MainPage(),
+//     AnnouncementsPage(),
+//     ClubsPage(),
+//     SchoolPage(),
+//     SettingsPage(),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: _screens.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: BottomNavigationBar(
+//         iconSize: 25,
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//             backgroundColor: Colors.black
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.speaker_notes),
+//             label: 'Inbox',
+//             backgroundColor: Colors.black
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.people),
+//             label: 'Clubs',
+//             backgroundColor: Colors.black
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.school),
+//             label: 'School',
+//             backgroundColor: Colors.black
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.settings),
+//             label: 'Settings',
+//             backgroundColor: Colors.black
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         selectedItemColor: Colors.blue,
+//         onTap: _onItemTapped,
+//         unselectedIconTheme: IconThemeData(color: Colors.white),
+//         showUnselectedLabels: false,
+//       )
+//     );
+//   }
+// }
+
+
+// class AppBarWidget extends StatefulWidget {
+//   const AppBarWidget({Key? key}) : super(key: key);
+
+//   @override
+//   _AppBarWidgetState createState() => _AppBarWidgetState();
+// }
 
 // class _AppBarWidgetState extends State<AppBarWidget> {
 //   int currentIndex = 0;
@@ -161,4 +205,3 @@ class _AppBarWidgetState extends State<AppBarWidget> {
 //     }
 //   }
 // }
-

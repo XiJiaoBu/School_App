@@ -11,6 +11,6 @@ class ClubsPage extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.black,
         ),
-        bottomNavigationBar: AppBarWidget()
+        bottomNavigationBar: Nav()
       );
 }
