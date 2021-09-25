@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:schoolapp/main.dart';
 import 'package:schoolapp/page/AnnouncementsPage.dart';
 import 'package:schoolapp/page/ClubsPage.dart';
-import 'package:schoolapp/page/ContactPage.dart';
+import 'package:schoolapp/page/HomePage.dart';
 import 'package:schoolapp/page/SettingsPage.dart';
 import 'package:schoolapp/page/SchoolPage.dart';
 
@@ -13,7 +13,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         child: Material(
-            color: Color.fromRGBO(50, 75, 205, 1),
+            color: Colors.black,
             child: ListView(
               padding: padding,
               children: <Widget>[
@@ -100,7 +100,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         break;
       case 4:
         Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ContactPage(),
+          builder: (context) => HomePage(),
         ));
         break;
       case 5:

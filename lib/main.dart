@@ -33,21 +33,15 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  Widget build(BuildContext context) => Scaffold(
-        drawer: NavigationDrawerWidget(),
-        appBar: AppBar(
-          title: Text(MyApp.title),
-          centerTitle: true,
-          backgroundColor: Colors.black,
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const <Widget>[
-            Text('i eat fat shit'),
-            Text('i am gay'),
-          ],
-          ),
-        bottomNavigationBar: Nav()
-       );
+  Widget build(BuildContext context) => SafeArea(
+    child: Scaffold(
+    drawer: NavigationDrawerWidget(),
+    appBar: AppBar(
+      title: Text(MyApp.title),
+      centerTitle: true,
+      backgroundColor: Colors.black,
+    ),
+    bottomNavigationBar: Nav()
+    )
+  );
 }

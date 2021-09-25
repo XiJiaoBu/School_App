@@ -4,13 +4,14 @@ import 'package:schoolapp/widget/AppBar.dart';
 
 class AnnouncementsPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Scaffold(
+  Widget build(BuildContext context) => SafeArea(
+        child: Scaffold(
         drawer: NavigationDrawerWidget(),
         appBar: AppBar(
           title: Text('Announcements'),
           centerTitle: true,
           backgroundColor: Colors.black,
         ),
-        bottomNavigationBar: Nav()
-      );
+      )
+    );
 }

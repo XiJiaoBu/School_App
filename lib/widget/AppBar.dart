@@ -2,51 +2,122 @@ import 'package:flutter/material.dart';
 import 'package:schoolapp/main.dart';
 import 'package:schoolapp/page/AnnouncementsPage.dart';
 import 'package:schoolapp/page/ClubsPage.dart';
+import 'package:schoolapp/page/HomePage.dart';
 import 'package:schoolapp/page/SettingsPage.dart';
 import 'package:schoolapp/page/SchoolPage.dart';
 
 class Nav extends StatefulWidget {
+  const Nav({Key? key}) : super(key: key);
+
   @override
-  _NavState createState() => _NavState();
+  State<Nav> createState() => _NavState();
 }
 
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
-  List<Widget> _widgetOptions = <Widget> [
-    MainPage(),
-    Text('ass'),
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static List<Widget> _widgetOptions = <Widget>[
+    HomePage(),
+    AnnouncementsPage(),
+    ClubsPage(),
+    SchoolPage(),
+    SettingsPage(),
   ];
 
-  void _onItemTap(int index) {
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bottom Nav Bar'),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        iconSize: 25,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.black
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.message),
+            icon: Icon(Icons.speaker_notes),
+            label: 'Inbox',
+            backgroundColor: Colors.black
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people),
+            label: 'Clubs',
+            backgroundColor: Colors.black
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+            backgroundColor: Colors.black
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+            backgroundColor: Colors.black
           ),
         ],
         currentIndex: _selectedIndex,
-        onTap: _onItemTap,
-      ),
+        selectedItemColor: Colors.blue,
+        onTap: _onItemTapped,
+        unselectedIconTheme: IconThemeData(color: Colors.white),
+        showUnselectedLabels: false,
+      )
     );
   }
 }
+
+// class Nav extends StatefulWidget {
+//   @override
+//   _NavState createState() => _NavState();
+// }
+
+// class _NavState extends State<Nav> {
+//   int _selectedIndex = 0;
+//   List<Widget> _widgetOptions = <Widget> [
+//     MainPage(),
+//     Text('ass'),
+//   ];
+
+//   void _onItemTap(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+  
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Bottom Nav Bar'),
+//       ),
+//       body: Center(
+//         child: _widgetOptions.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.message),
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.message),
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         onTap: _onItemTap,
+//       ),
+//     );
+//   }
+// }
 
 // class AppBarWidget extends StatefulWidget {
 //   @override
