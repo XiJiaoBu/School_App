@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:schoolapp/widget/NavigationDrawer.dart';
 import 'package:schoolapp/widget/AppBar.dart';
-
+import 'package:schoolapp/constants.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: title,
-        theme: ThemeData(primarySwatch: Colors.blue),
+        theme: new ThemeData(
+          scaffoldBackgroundColor: kBackgroundColor,
+        ),
         home: MainPage(),
       );
 }
@@ -33,15 +35,18 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  Widget build(BuildContext context) => SafeArea(
-    child: Scaffold(
-    drawer: NavigationDrawerWidget(),
-    appBar: AppBar(
-      title: Text(MyApp.title),
-      centerTitle: true,
-      backgroundColor: Colors.black,
-    ),
-    bottomNavigationBar: Nav()
+  Widget build(BuildContext context) => Container(
+    color: kPrimaryColor,
+    child: SafeArea(
+      child: Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: Text(MyApp.title),
+        centerTitle: true,
+        backgroundColor: kPrimaryColor,
+      ),
+      bottomNavigationBar: Nav()
+      )
     )
   );
 }
