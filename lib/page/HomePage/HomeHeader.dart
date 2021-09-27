@@ -9,16 +9,16 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
+      padding: EdgeInsets.fromLTRB(20, 15, 0, 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
               child: Row(
                 children: <Widget> [
                   Text(
-                  'Saturday September 25',
+                  'Good Morning!',
                   style: TextStyle(
                     color: kTextColor,
                     fontSize: 30
@@ -27,10 +27,10 @@ class HomeHeader extends StatelessWidget {
               ])
             ),
             Text(
-              'Goodmorning!',
+              'Welcome to the Milliken app.',
               style: TextStyle(
                 color: kTextColor,
-                fontSize: 40
+                fontSize: 20
               ),
             )
           ]

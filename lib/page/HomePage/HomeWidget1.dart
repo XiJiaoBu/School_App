@@ -8,19 +8,27 @@ class HomeWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget> [
           Padding(
-            padding: EdgeInsets.fromLTRB(0, 30, 20, 0),
+            padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(width: 1, color: kTextColor),
                 borderRadius: const BorderRadius.all(Radius.circular(32)),
-                color: kTextColor
+                color: kTextColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ]
               ),
-              width: 170,
-              height: 170,
+              width: 180,
+              height: 180,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -31,17 +39,17 @@ class HomeWidget1 extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget> [
                     Text(
-                        'Place',
+                        'self',
                         style: TextStyle(
                           color: kPrimaryColor,
-                          fontSize: 20,
+                          fontSize: 22,
                         )
                       ),
                       Text(
-                        'Holder',
+                        'screening',
                         style: TextStyle(
                           color: kPrimaryColor,
-                          fontSize: 20,
+                          fontSize: 22,
                         )
                       )
                     ]
@@ -52,15 +60,23 @@ class HomeWidget1 extends StatelessWidget {
           ),
         ),
         Padding(
-            padding: EdgeInsets.fromLTRB(20, 30, 0, 0),
+            padding: EdgeInsets.fromLTRB(27, 15, 0, 0),
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(width: 1, color: kTextColor),
                 borderRadius: const BorderRadius.all(Radius.circular(32)),
-                color: kTextColor
+                color: kTextColor,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ]
               ),
-              width: 170,
-              height: 170,
+              width: 180,
+              height: 180,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -70,21 +86,35 @@ class HomeWidget1 extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget> [
-                    Text(
-                        'Place',
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
+                      child: Column(
+                        children: <Widget> [
+                        Text(
+                        'Markham ',
                         style: TextStyle(
                           color: kPrimaryColor,
                           fontSize: 20,
                         )
                       ),
                       Text(
-                        'Holder',
+                        '23\u00B0',
                         style: TextStyle(
                           color: kPrimaryColor,
-                          fontSize: 20,
+                          fontSize: 45,
                         )
+                      ),
+                      Text(
+                        'H: 25 L: 20',
+                        style: TextStyle(
+                          color: kPrimaryColor,
+                          fontSize: 15,
+                        ),
+                      ),
+                      ]
                       )
-                    ]
+                     ),
+                  ]
                   ),
                 )
               ],
