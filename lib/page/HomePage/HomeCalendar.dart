@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:schoolapp/constants.dart';
 import 'package:schoolapp/page/HomePage/HomePage.dart';
+import 'package:intl/intl.dart';
+
+
 
 class HomeCalendar extends StatelessWidget {
   const HomeCalendar({ Key? key }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,11 +39,10 @@ class HomeCalendar extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Text(
-                      'sunday, sep. 26',
+                    child: Text(DateFormat("EEEE, MMM. dd").format(DateTime.now()),
                       style: TextStyle(
                         color: kPrimaryColor,
-                        fontSize: 20
+                        fontSize: 18
                       ),
                     )
                   ),

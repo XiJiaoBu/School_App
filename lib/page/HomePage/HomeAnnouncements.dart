@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schoolapp/constants.dart';
 import 'package:schoolapp/page/HomePage/HomePage.dart';
+import 'package:schoolapp/page/InboxPage/announcementStoring.dart';
 
 class HomeAnnonucements extends StatelessWidget {
   const HomeAnnonucements({ Key? key }) : super(key: key);
@@ -39,15 +40,17 @@ class HomeAnnonucements extends StatelessWidget {
             ),
            Padding(
              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-             child: Expanded(
+             child: Container(
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
-                child: Text(
-                  "andjew lee is a nigga nigga jew nigga ",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 19.0,
+                child: Container(
+                  child: Text(
+                    displayAnnounce[0].announcement,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 19.0,
+                    ),
                   ),
                 ),
               ),

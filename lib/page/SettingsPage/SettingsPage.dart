@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:schoolapp/widget/NavigationDrawer.dart';
-import 'package:schoolapp/widget/AppBar.dart';
 import 'package:schoolapp/constants.dart';
+import 'package:schoolapp/page/SettingsPage/Notifications.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -19,6 +18,9 @@ class SettingsPage extends StatelessWidget {
         centerTitle: true, 
         backgroundColor: kPrimaryColor,
       ),
+      body: Column(children: [
+        Notifications(),
+      ],)
     );
   }
 }

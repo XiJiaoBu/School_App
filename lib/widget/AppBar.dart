@@ -50,8 +50,8 @@ class _NavState extends State<Nav> {
             backgroundColor: kPrimaryColor
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'Clubs',
+            icon: Icon(Icons.map_outlined),
+            label: 'Resources',
             backgroundColor: kPrimaryColor
           ),
           BottomNavigationBarItem(

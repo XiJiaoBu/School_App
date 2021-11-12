@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:schoolapp/constants.dart';
-import 'package:schoolapp/widget/NavigationDrawer.dart';
-import 'package:schoolapp/widget/AppBar.dart';
+import 'package:schoolapp/page/ClubsPage/School.dart';
+import 'package:schoolapp/page/ClubsPage/Contact.dart';
+import 'package:schoolapp/page/ClubsPage/Other.dart';
+
 
 class ClubsPage extends StatelessWidget {
   @override
@@ -9,7 +11,7 @@ class ClubsPage extends StatelessWidget {
     appBar: AppBar(
       elevation: 0,
       title: Text(
-        'Clubs',
+        'Resources',
         style: TextStyle(
           color: kTextColor,
           fontSize: 25,
@@ -18,5 +20,13 @@ class ClubsPage extends StatelessWidget {
       centerTitle: true,
       backgroundColor: kPrimaryColor,
    ),
+   body: SingleChildScrollView(
+     child: Column(
+      children: [
+        School(),
+        Contact(),
+        Other(),
+   ]),
+   )
   );
 }

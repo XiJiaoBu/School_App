@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schoolapp/page/InboxPage/Announcement1.dart';
 import 'package:schoolapp/widget/NavigationDrawer.dart';
 import 'package:schoolapp/constants.dart';
 
@@ -16,11 +17,26 @@ class InboxPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: kPrimaryColor,
+        backgroundColor: Colors.transparent
      ),
-     body: Container(
-       child: Column(),
+     body: Padding(
+       padding: const EdgeInsets.fromLTRB(0,  0,  0,  0),
+       child: Container(
+         child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Announcements1(),
+              Announcements2(),
+              Announcements3(),
+              Announcements4(),
+              Announcements5(),
+              Announcements6(),
+              Announcements7(),
+            ],
+          ),
+       ),
      ),
+     )
     )
   );
 }
