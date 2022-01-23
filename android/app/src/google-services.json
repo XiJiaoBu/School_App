@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "897503646009",
+    "project_id": "knightsapp-6d7c5",
+    "storage_bucket": "knightsapp-6d7c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897503646009:android:c0a80ea7eae451ff0798e8",
+        "android_client_info": {
+          "package_name": "com.larryHan.knightsApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897503646009-e7encukt4qhrquu5visjnfa8ioh1k2jn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiWq6NedYon5hGmkUhNPCvQqk31-pc5-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897503646009-e7encukt4qhrquu5visjnfa8ioh1k2jn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "897503646009-5sl6tdb8farmqqs33kg2hgj00vq3i1m8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.larryHan.knightsApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
