@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:schoolapp/constants.dart';
-
-class Notifications extends StatefulWidget {
-  const Notifications({ Key? key }) : super(key: key);
+ 
+class DarkMode extends StatefulWidget {
+  const DarkMode({ Key? key }) : super(key: key);
 
   @override
-  _NotificationsState createState() => _NotificationsState();
+  _DarkModeState createState() => _DarkModeState();
 }
 
-class _NotificationsState extends State<Notifications> {
-  bool notifs = false;
-
+class _DarkModeState extends State<DarkMode> {
+  bool theme = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 0),
+      padding: EdgeInsets.fromLTRB(kDefaultPadding, kAnnouncementPadding, kDefaultPadding, 0),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+        padding: EdgeInsets.fromLTRB(0, 3, 0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
@@ -47,7 +46,7 @@ class _NotificationsState extends State<Notifications> {
                             Padding(
                               padding: EdgeInsets.fromLTRB(13, 0, 0, 0),
                               child: Text(
-                                'Notifications',
+                                'Theme',
                                 style: TextStyle(
                                   fontSize: 20,
                                   color: kBackgroundColor,
@@ -60,7 +59,6 @@ class _NotificationsState extends State<Notifications> {
 
                               )
                             ),
-
                             Expanded(
                               flex: 1,
                               child: Container(
@@ -68,16 +66,22 @@ class _NotificationsState extends State<Notifications> {
                             ),
                             Expanded(
                               flex: 1,
+                              child: Container(
+                              )
+                            ),
+                            Expanded(
+                              flex:1,
                               child: Transform.scale(
                                 scale: 1,
                                 child: Switch.adaptive(
-                                  value: notifs,
+                                  value: theme,
                                   onChanged: (bool newValue) {
                                     setState(() {
-                                      notifs = newValue;
+                                      theme = newValue;
                                     });
                                   },
-                                 inactiveTrackColor: kGreyColor,
+                                  activeTrackColor: kBackgroundColor,
+                                  inactiveTrackColor: kGreyColor,
                                 ),
                              ),
                           )]
@@ -94,27 +98,3 @@ class _NotificationsState extends State<Notifications> {
     );
   }
 }
-
-
-
-// class Notifs extends StatefulWidget {
-//   const Notifs({ Key? key }) : super(key: key);
-
-//   @override
-//   _NotifsState createState() => _NotifsState();
-// }
-
-// class _NotifsState extends State<Notifs> {
-//   bool _notifs = true;
-//   @override
-//   Widget build(BuildContext context) {
-//     return SwitchListTile(
-//       value: _notifs,
-//       onChanged: (bool value) {
-//         setState(() {
-//           _notifs= value;
-//         });
-//       }
-//     );
-//   }
-// }

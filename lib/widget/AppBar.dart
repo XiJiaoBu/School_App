@@ -15,7 +15,7 @@ class Nav extends StatefulWidget {
 class _NavState extends State<Nav> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 0, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     InboxPage(),
@@ -35,37 +35,65 @@ class _NavState extends State<Nav> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        iconSize: 30,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: kPrimaryColor
+      extendBody: true,
+      backgroundColor: Colors.transparent,
+      bottomNavigationBar: Container(
+          margin: EdgeInsets.fromLTRB(kDefaultPadding, 0, kDefaultPadding, 30),
+          decoration: BoxDecoration(                                                   
+            borderRadius: BorderRadius.only(                                           
+             topRight: Radius.circular(25), topLeft: Radius.circular(25), bottomLeft: Radius.circular(25), bottomRight: Radius.circular(25)),            
+             boxShadow: [                                                               
+               BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),       
+           ],                                                                         
+        ),                                                                           
+          child: ClipRRect(                                                            
+            borderRadius: BorderRadius.only(                                           
+            topLeft: Radius.circular(25.0),                                            
+            topRight: Radius.circular(25.0),  
+            bottomLeft: Radius.circular(25.0), 
+            bottomRight: Radius.circular(25.0),                                
+            ),                                                                         
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0,),
+                child: SizedBox(
+                  height: 65,
+                  child: BottomNavigationBar(                                                
+                  elevation: 0,
+                  iconSize: 30,
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: SizedBox(height: 0, child: Icon(Icons.home)),
+                      label: 'Home',
+                      backgroundColor: kBackgroundColor
+                    ),
+                    BottomNavigationBarItem(
+                      icon: SizedBox(height: 0, child: Icon(Icons.speaker_notes)),
+                      label: 'Inbox',
+                      backgroundColor: kBackgroundColor
+                    ),
+                    BottomNavigationBarItem(
+                      icon: SizedBox(height: 0, child: Icon(Icons.map_outlined)),
+                      label: 'Resources',
+                      backgroundColor: kBackgroundColor
+                    ),
+                    BottomNavigationBarItem(
+                      icon: SizedBox(height:0, child: Icon(Icons.settings)),
+                      label: 'Settings',
+                      backgroundColor: kBackgroundColor
+                    ),
+                  ],
+                  currentIndex: _selectedIndex,
+                  selectedItemColor: kRedColor,
+                  onTap: _onItemTapped,
+                  unselectedIconTheme: IconThemeData(color: kGreyColor),
+                  showUnselectedLabels: false,      
+                  showSelectedLabels: false,    
+                                                                                            
+                    ),
+                ),
+              ),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.speaker_notes),
-            label: 'Inbox',
-            backgroundColor: kPrimaryColor
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.map_outlined),
-            label: 'Resources',
-            backgroundColor: kPrimaryColor
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: kPrimaryColor
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: kTextColor,
-        onTap: _onItemTapped,
-        unselectedIconTheme: IconThemeData(color: Colors.white),
-        showUnselectedLabels: false,
-      )
-    );
+      );                                                                                                                                         
   }
 }

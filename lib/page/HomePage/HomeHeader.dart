@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:schoolapp/constants.dart';
 import 'package:schoolapp/page/HomePage/HomePage.dart';
 import 'package:intl/intl.dart';
+
 
 var time = DateTime.now();
 int get_Hour(){
 return time.hour;
 }
-int hour=get_Hour();
+int get_minutes(){
+  return time.minute;
+}
+int minute = get_minutes();
+int hour = get_Hour();
+
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({ Key? key }) : super(key: key);
@@ -15,7 +22,7 @@ class HomeHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 15, 0, 10),
+      padding: EdgeInsets.fromLTRB(kDefaultPadding, 15, 0, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
@@ -24,25 +31,26 @@ class HomeHeader extends StatelessWidget {
               child: Row(
                 children: <Widget> [
                   Text((() {
-                      if({5, 12}.contains(hour)){{
-                        return "Good Morning!";}
-                    } else if ({13, 17}.contains(hour)){{
-                        return "Good Afternoon!";}
-                    } else if ({18, 22}.contains(hour)){{
-                        return "Good Evening!";}
-                    } else if ({22, 4}.contains(hour)) {}{{
-                        return "Sleep Well :)";}
+                      if({5,6,7,8,9,10,11}.contains(hour)){{
+                        return "Good morning,";}
+                    } else if ({12,13,14,15,16,17}.contains(hour)){{
+                        return "Good afternoon,";}
+                    } else if ({18,19,20,21,22,23}.contains(hour)){{
+                        return "Good evening,";}
+                    }  else {{
+                        return "Sleep well :)";}
                     }})(),
                     style: TextStyle(
-                      color: kTextColor,
-                      fontSize: 30
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
                     )),
               ])
             ),
             Text(
               'Welcome to the Milliken app.',
               style: TextStyle(
-                color: kTextColor,
+                color: Colors.black,
                 fontSize: 20
               ),
             )
