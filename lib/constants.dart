@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//light mode Colors
+//light mode Colors c
 const kPrimaryColor = Color(0xFF96c2cf);
 const kTextColor = Color(0xFF4F6367);
 const kBackgroundColor = Color(0xFFF2F2F2);
